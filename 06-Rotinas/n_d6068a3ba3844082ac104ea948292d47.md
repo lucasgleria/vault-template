@@ -7,7 +7,7 @@ status: "Rascunho"
 criado: "2026-10-29T23:53:05+00:00"
 atualizado: "2026-10-29T23:53:05+00:00"
 origem: "conversa-autenticada"
-origem_ref: "sessao:implantacao-euvih-2026-10-29"
+origem_ref: "sessao:implantacao-vault-2026-10-29"
 confianca: "confirmado"
 sensibilidade: "pessoal"
 area_id: null

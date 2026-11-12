@@ -34,4 +34,4 @@ A configuração aceita uma pasta, um repositório ou um serviço de arquivos co
 
 ## Origem e verificações
 
-Este template reaproveita o euvih. A [especificação 2.0.0](Implementation-euvih.md) e o [guia original](docs/Guia-configuracao.md) documentam a origem. As regras operacionais atuais estão em `AGENTS.md` e `08-Sistema/`. A validação estrutural atual está descrita em [contratos](08-Sistema/Esquemas/README.md).
+Este template reaproveita o vault. A [especificação 2.0.0](Implementation-vault.md) e o [guia original](docs/Guia-configuracao.md) documentam a origem. As regras operacionais atuais estão em `AGENTS.md` e `08-Sistema/`. A validação estrutural atual está descrita em [contratos](08-Sistema/Esquemas/README.md).

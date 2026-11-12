@@ -1,8 +1,8 @@
 # Adaptações aplicadas na implantação
 
-O pacote foi extraído das nove entradas e todos os hashes/tamanhos de origem foram conferidos contra Implementation-euvih.md. O código original permanece integralmente nesse documento.
+O pacote foi extraído das nove entradas e todos os hashes/tamanhos de origem foram conferidos contra Implementation-vault.md. O código original permanece integralmente nesse documento.
 
-Na revisão aplicada ao euvih:
+Na revisão aplicada ao vault:
 
 - O teste CRLF grava bytes sem a conversão adicional de newline do Windows.
 - O teste de symlink informa skip quando o Windows nega o privilégio de criação; não conta como aprovado.

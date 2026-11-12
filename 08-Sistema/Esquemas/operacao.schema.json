@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "euvih — operacao.schema.json",
+  "title": "vault — operacao.schema.json",
   "type": "object",
   "properties": {
     "operation_id": {

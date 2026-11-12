@@ -1,6 +1,6 @@
 # Vault Adaptativo — especificação completa para implementação
 
-> Referência de origem. Este documento preserva a especificação euvih 2.0.0 e seus exemplos. O template atual é definido por `AGENTS.md`, `08-Sistema/config.json` e `08-Sistema/Continuidade/onboarding.md`. As escolhas de destino, perfil e organização são feitas na configuração de cada vault.
+> Referência de origem. Este documento preserva a especificação vault 2.0.0 e seus exemplos. O template atual é definido por `AGENTS.md`, `08-Sistema/config.json` e `08-Sistema/Continuidade/onboarding.md`. As escolhas de destino, perfil e organização são feitas na configuração de cada vault.
 
 **Versão:** 2.0.0  
 **Data:** 29 de outubro de 2026  

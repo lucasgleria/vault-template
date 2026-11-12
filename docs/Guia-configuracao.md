@@ -3,13 +3,13 @@
 # Vault Adaptativo — guia de configuração e uso
 
 **Versão:** 2.0.0 · **Data:** 29/10/2026  
-**Compatível com:** `../Implementation-euvih.md`, versão 2.0.0 e contrato de dados 2.
+**Compatível com:** `../Implementation-vault.md`, versão 2.0.0 e contrato de dados 2.
 
 O Vault Adaptativo organiza tarefas, projetos, responsabilidades, estudos, rotinas e conhecimento a partir de conversas com um agente de IA. **O GitHub privado guarda o estado canônico; o agente é a interface e o executor; o Obsidian é uma cópia local opcional do mesmo vault.**
 
 Você utiliza a interface do agente que escolheu. Não precisa instalar Python, executar comandos, editar Markdown, abrir o GitHub ou manter um computador ligado durante o uso cotidiano em nuvem. A configuração inicial pode exigir autorizar uma conexão e selecionar o repositório correto.
 
-Este guia acompanha a [especificação completa](../Implementation-euvih.md). Os dois documentos descrevem uma implantação futura. **Esta revisão não implementou o sistema, não modificou repositórios e não configurou contas ou serviços.**
+Este guia acompanha a [especificação completa](../Implementation-vault.md). Os dois documentos descrevem uma implantação futura. **Esta revisão não implementou o sistema, não modificou repositórios e não configurou contas ou serviços.**
 
 ## 1. Entenda os componentes
 

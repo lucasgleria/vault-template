@@ -18,4 +18,4 @@ O agente deve verificar acesso, destino, versões e resultado das gravações ne
 
 ## Origem
 
-A estrutura veio da especificação euvih 2.0.0. A configuração atual e as decisões colhidas no onboarding definem cada novo vault. Registros locais da implantação de origem, quando preservados em `08-Sistema/Historico/`, ficam fora da distribuição pública do template.
+A estrutura veio da especificação vault 2.0.0. A configuração atual e as decisões colhidas no onboarding definem cada novo vault. Registros locais da implantação de origem, quando preservados em `08-Sistema/Historico/`, ficam fora da distribuição pública do template.
