@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "euvih — operacao.schema.json",
+  "type": "object",
+  "properties": {
+    "operation_id": {
+      "type": "string",
+      "pattern": "^op_[0-9a-f]{32}$"
+    },
+    "request_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "vault_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor_connection_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "base_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain_changes_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "state": {
+      "const": "aplicada_se_presente_na_branch_canonica"
+    },
+    "prepared_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "schema_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "domain_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "missing_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "pending_external_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "operation_id",
+    "request_ref",
+    "vault_id",
+    "actor_connection_ref",
+    "base_commit",
+    "authorization_ref",
+    "reason",
+    "domain_changes_sha256",
+    "state",
+    "prepared_at",
+    "schema_version",
+    "entity_ids",
+    "missing_sources",
+    "pending_external_actions"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,1173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "euvih — nota.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "tipo",
+    "titulo",
+    "status",
+    "criado",
+    "atualizado",
+    "origem",
+    "confianca",
+    "sensibilidade"
+  ],
+  "properties": {
+    "origem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prazo_em": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "slug": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "sensibilidade": {
+      "enum": [
+        "publico",
+        "pessoal",
+        "restrito"
+      ]
+    },
+    "periodo_fim": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "schema_version": {
+      "type": "integer",
+      "const": 2
+    },
+    "prioridade_origem": {
+      "enum": [
+        null,
+        "confirmada",
+        "proposta",
+        "delegada"
+      ]
+    },
+    "agendamento_status": {
+      "enum": [
+        "nao_solicitado",
+        "nao_disponivel",
+        "proposto",
+        "em_teste",
+        "ativo",
+        "pausado",
+        "falha",
+        "desconhecido"
+      ]
+    },
+    "energia": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "confirmado_em": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "janela_min": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "titulo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "duracao_min": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "dependencias": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "revisar_em": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "entrega_status": {
+      "enum": [
+        null,
+        "nao_solicitada",
+        "pendente",
+        "entregue",
+        "falha",
+        "desconhecida"
+      ]
+    },
+    "cancelado": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "executor_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "responsabilidade": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "verificado_em": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "chave_execucao": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "necessidade_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "rotina_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "pattern": "^n_[0-9a-f]{32}$"
+    },
+    "escopo_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "indicador": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "concluido": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "pergunta": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "categoria": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "local_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "origem_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "resultado": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^n_[0-9a-f]{32}$"
+    },
+    "valor_atual": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "gatilho": {
+      "enum": [
+        "sob_demanda",
+        "agendado_app",
+        "automacao_nuvem"
+      ]
+    },
+    "prazo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "aguardando": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "chave_origem": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "capacidade_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "periodo_inicio": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "versao_modulo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "timezone": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "fontes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "disparador_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "area_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "pattern": "^n_[0-9a-f]{32}$"
+    },
+    "manifesto_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "prazo_origem_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "motivo": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "estado_execucao": {
+      "enum": [
+        null,
+        "reservada",
+        "em_andamento",
+        "preparada",
+        "persistida",
+        "falha",
+        "parcial",
+        "ignorada",
+        "cancelada",
+        "desconhecida"
+      ]
+    },
+    "criterio_aceite": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "agenda_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "criado": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "politica_atraso": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "validade": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "frescor_max_min": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "objetivo_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "autoridade_sobre": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "prioridade": {
+      "enum": [
+        null,
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "data": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "atualizado": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "licenca_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "resultado_status": {
+      "enum": [
+        null,
+        "completo",
+        "parcial",
+        "sem_resultado"
+      ]
+    },
+    "criterio_manutencao": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "destino_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "estimativa_origem": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "tentativa": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "canal_entrega_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "captura",
+        "tarefa",
+        "projeto",
+        "area",
+        "objetivo",
+        "rotina",
+        "conhecimento",
+        "recurso",
+        "registro",
+        "decisao",
+        "perfil",
+        "fonte",
+        "modulo"
+      ]
+    },
+    "vigente_desde": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "condicao_retomada": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "projeto_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "pattern": "^n_[0-9a-f]{32}$"
+    },
+    "evidencias": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "conexao_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "contextos": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "versao_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "substitui_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "dependencias_modulo": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confianca": {
+      "enum": [
+        "confirmado",
+        "inferido",
+        "nao_verificado"
+      ]
+    },
+    "versao_procedimento": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "motivo_cancelamento": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "horizonte": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "modulos": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^n_[0-9a-f]{32}$"
+      },
+      "uniqueItems": true
+    },
+    "proxima_acao_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "pattern": "^n_[0-9a-f]{32}$"
+    },
+    "max_tentativas": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    }
+  },
+  "patternProperties": {
+    "^mod_[a-z0-9_]+__[a-z0-9_]+$": {
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "string",
+          "number",
+          "boolean",
+          "null"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "captura"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Nova",
+              "Processada",
+              "Descartada"
+            ]
+          }
+        },
+        "required": [
+          "destino_ids"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "tarefa"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Inbox",
+              "Próxima ação",
+              "Em andamento",
+              "Aguardando",
+              "Bloqueada",
+              "Algum dia",
+              "Concluído",
+              "Cancelado"
+            ]
+          },
+          "criterio_aceite": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "criterio_aceite",
+          "dependencias"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "projeto"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Backlog",
+              "Ativo",
+              "Pausado",
+              "Concluído",
+              "Cancelado"
+            ]
+          },
+          "resultado": {
+            "type": "string",
+            "minLength": 1
+          },
+          "criterio_aceite": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "resultado",
+          "criterio_aceite"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "area"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Ativa",
+              "Inativa"
+            ]
+          },
+          "responsabilidade": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "responsabilidade"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "objetivo"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Proposto",
+              "Ativo",
+              "Pausado",
+              "Alcançado",
+              "Cancelado"
+            ]
+          },
+          "resultado": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "resultado"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "rotina"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Rascunho",
+              "Ativa",
+              "Pausada",
+              "Desativada"
+            ]
+          },
+          "versao_procedimento": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "gatilho",
+          "agendamento_status",
+          "versao_procedimento"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "conhecimento"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Rascunho",
+              "Vigente",
+              "A revisar",
+              "Superado"
+            ]
+          },
+          "pergunta": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "pergunta"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "recurso"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Disponível",
+              "Indisponível",
+              "Arquivado"
+            ]
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "registro"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Registrado",
+              "Corrigido"
+            ]
+          },
+          "categoria": {
+            "type": "string",
+            "minLength": 1
+          },
+          "data": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "categoria",
+          "data"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "decisao"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Proposta",
+              "Vigente",
+              "Substituída",
+              "Revogada"
+            ]
+          },
+          "motivo": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "motivo",
+          "substitui_ids",
+          "escopo_ids"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "perfil"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Em descoberta",
+              "Vigente",
+              "A revisar"
+            ]
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "fonte"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Não verificada",
+              "Disponível",
+              "Limitada",
+              "Indisponível",
+              "Revogada"
+            ]
+          }
+        },
+        "required": [
+          "autoridade_sobre"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "modulo"
+          }
+        },
+        "required": [
+          "tipo"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "Proposto",
+              "Piloto",
+              "Ativo",
+              "Pausado",
+              "Desativado"
+            ]
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "versao_modulo": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "slug",
+          "versao_modulo",
+          "dependencias_modulo"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "tarefa"
+          },
+          "status": {
+            "const": "Concluído"
+          }
+        },
+        "required": [
+          "tipo",
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "concluido",
+          "criterio_aceite",
+          "evidencias"
+        ],
+        "properties": {
+          "concluido": {
+            "type": "string",
+            "format": "date"
+          },
+          "criterio_aceite": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidencias": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "projeto"
+          },
+          "status": {
+            "const": "Concluído"
+          }
+        },
+        "required": [
+          "tipo",
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "concluido",
+          "criterio_aceite",
+          "evidencias"
+        ],
+        "properties": {
+          "concluido": {
+            "type": "string",
+            "format": "date"
+          },
+          "criterio_aceite": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidencias": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

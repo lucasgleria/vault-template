@@ -1,0 +1,71 @@
+{
+  "version": "2.0.0",
+  "purpose": "optional_offline_auxiliaries",
+  "files": {
+    "README_AUXILIARES.md": {
+      "sha256": "5754fa930fbac6c7b0093d4c4628dc2bf0c1e6e958849b101d05d4b453528f09",
+      "bytes": 2348,
+      "role": "orientacao_opcional",
+      "source_sha256": "5754fa930fbac6c7b0093d4c4628dc2bf0c1e6e958849b101d05d4b453528f09",
+      "source_bytes": 2348
+    },
+    "requirements.txt": {
+      "sha256": "5088c4a85bbac0c6be79700e03bfaa2614f253e7c63281bdbce804c68f68b867",
+      "bytes": 83,
+      "role": "dependencias_opcionais",
+      "source_sha256": "5088c4a85bbac0c6be79700e03bfaa2614f253e7c63281bdbce804c68f68b867",
+      "source_bytes": 83
+    },
+    "scripts/audit_snapshot.py": {
+      "sha256": "df4263f959f91a9737a5b965cee87326a7229fc95701e329d63fe51d9a4f4ecc",
+      "bytes": 13854,
+      "role": "auditoria_somente_leitura",
+      "source_sha256": "b0b7d4aae876ed4ecac01b231f64bfecadc27dd3b582c394be7611c1aa1001da",
+      "source_bytes": 13330
+    },
+    "scripts/check_content.py": {
+      "sha256": "f2d0cd18ccf0346a4d16885cd5d5257f8256c04c75b2383587cb1036b43d6473",
+      "bytes": 2088,
+      "role": "triagem_heuristica_redigida",
+      "source_sha256": "f2d0cd18ccf0346a4d16885cd5d5257f8256c04c75b2383587cb1036b43d6473",
+      "source_bytes": 2088
+    },
+    "scripts/extract_bundle.py": {
+      "sha256": "98641893c2d008f3dbffd7e812ec651c23f1f640c759fff6b01736a2253f4939",
+      "bytes": 3655,
+      "role": "extracao_de_blocos",
+      "source_sha256": "b9398a6871b40acb8c9d695fc4a637ee3ff694b3f0361c1535df9bd45e3b9748",
+      "source_bytes": 3628
+    },
+    "scripts/snapshot_archive.py": {
+      "sha256": "28522d3a53a17a3a5ef3d2d3bd384ba0b195af3ab442d79f3a4aeb5595f9fb2f",
+      "bytes": 6181,
+      "role": "copia_e_restore_de_exportacao",
+      "source_sha256": "acc29414f9ff8e02af70ec0f577f5e17ef20e0d558d676b5909ba963b68bfcd8",
+      "source_bytes": 6192
+    },
+    "contracts/github-read.graphql": {
+      "sha256": "10dffe216003908ccc14549ca318bd4811d28ec98cfa7b3081db698caa6a9562",
+      "bytes": 241,
+      "role": "exemplo_inerte_de_consulta",
+      "source_sha256": "10dffe216003908ccc14549ca318bd4811d28ec98cfa7b3081db698caa6a9562",
+      "source_bytes": 241
+    },
+    "contracts/github-write.graphql": {
+      "sha256": "9e97e42da552cdc533a7f5b07d5d590062818d89f07037cd9179e5fa95c158c6",
+      "bytes": 198,
+      "role": "exemplo_inerte_de_escrita",
+      "source_sha256": "9e97e42da552cdc533a7f5b07d5d590062818d89f07037cd9179e5fa95c158c6",
+      "source_bytes": 198
+    },
+    "tests/test_auxiliaries.py": {
+      "sha256": "9de5400fa1aa3ca1704a020da0f386ef485f0ac0ffadac1da12a1127b1f86464",
+      "bytes": 12397,
+      "role": "testes_offline_ficticios",
+      "source_sha256": "2c721c623390442010f988639f2d60d75ecc1f6e372ffef2c35cfb6b1d24abd8",
+      "source_bytes": 12197
+    }
+  },
+  "source_version": "2.0.0",
+  "applied_revision": "vault-template-2.1"
+}

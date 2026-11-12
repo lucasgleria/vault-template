@@ -1,0 +1,7 @@
+mutation VaultWrite($input: CreateCommitOnBranchInput!) {
+  createCommitOnBranch(input: $input) {
+    clientMutationId
+    commit { oid url }
+    ref { name target { ... on Commit { oid } } }
+  }
+}

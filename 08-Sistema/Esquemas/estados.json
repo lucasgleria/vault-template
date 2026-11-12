@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "euvih — estados.json",
+  "schema_version": 2,
+  "states": {
+    "captura": [
+      "Nova",
+      "Processada",
+      "Descartada"
+    ],
+    "tarefa": [
+      "Inbox",
+      "Próxima ação",
+      "Em andamento",
+      "Aguardando",
+      "Bloqueada",
+      "Algum dia",
+      "Concluído",
+      "Cancelado"
+    ],
+    "projeto": [
+      "Backlog",
+      "Ativo",
+      "Pausado",
+      "Concluído",
+      "Cancelado"
+    ],
+    "area": [
+      "Ativa",
+      "Inativa"
+    ],
+    "objetivo": [
+      "Proposto",
+      "Ativo",
+      "Pausado",
+      "Alcançado",
+      "Cancelado"
+    ],
+    "rotina": [
+      "Rascunho",
+      "Ativa",
+      "Pausada",
+      "Desativada"
+    ],
+    "conhecimento": [
+      "Rascunho",
+      "Vigente",
+      "A revisar",
+      "Superado"
+    ],
+    "recurso": [
+      "Disponível",
+      "Indisponível",
+      "Arquivado"
+    ],
+    "registro": [
+      "Registrado",
+      "Corrigido"
+    ],
+    "decisao": [
+      "Proposta",
+      "Vigente",
+      "Substituída",
+      "Revogada"
+    ],
+    "perfil": [
+      "Em descoberta",
+      "Vigente",
+      "A revisar"
+    ],
+    "fonte": [
+      "Não verificada",
+      "Disponível",
+      "Limitada",
+      "Indisponível",
+      "Revogada"
+    ],
+    "modulo": [
+      "Proposto",
+      "Piloto",
+      "Ativo",
+      "Pausado",
+      "Desativado"
+    ]
+  }
+}

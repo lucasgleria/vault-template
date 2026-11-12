@@ -1,0 +1,73 @@
+{
+  "schema_version": 2,
+  "module_slug": "estudos",
+  "module_version": "1.0.0",
+  "module_note_id": "__ID_DA_NOTA_MODULO__",
+  "core_schema_min": 2,
+  "purpose": "Organizar aprendizagem e entregas declaradas pela pessoa",
+  "exclusions": [
+    "presumir matrícula",
+    "inventar domínio",
+    "impor metas profissionais"
+  ],
+  "dependencies": [],
+  "entities_reused": [
+    "area",
+    "projeto",
+    "tarefa",
+    "conhecimento",
+    "recurso",
+    "rotina",
+    "fonte"
+  ],
+  "fields": {
+    "mod_estudos__curso_ref": {
+      "type": "string",
+      "nullable": true,
+      "required": false,
+      "sensitivity": "pessoal"
+    },
+    "mod_estudos__modalidade": {
+      "type": "string",
+      "nullable": true,
+      "required": false,
+      "sensitivity": "pessoal"
+    },
+    "mod_estudos__progresso_confirmado": {
+      "type": "number",
+      "nullable": true,
+      "minimum": 0,
+      "maximum": 100,
+      "required": false,
+      "evidence_required_if_set": true
+    }
+  },
+  "routines_possible": [
+    "Revisão de estudos",
+    "Preparação de entrega"
+  ],
+  "required_capabilities": [
+    "read_vault",
+    "write_vault"
+  ],
+  "optional_capabilities": [
+    "read_learning_source",
+    "read_calendar"
+  ],
+  "permissions_granted_by_manifest": [],
+  "activation_authorization_ref": null,
+  "acceptance": [
+    "reutilizar curso e projeto existentes",
+    "preservar desconhecidos",
+    "progresso com definição e fonte",
+    "pausa respeitada",
+    "não ampliar acesso"
+  ],
+  "migration": {
+    "from_versions": [],
+    "mapping_ref": null,
+    "rollback_ref": null
+  },
+  "deactivation": "pause_linked_procedures_preserve_readable_records",
+  "review_after_days": 60
+}

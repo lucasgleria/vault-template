@@ -1,0 +1,32 @@
+{
+  "document_version": "2.1.0",
+  "schema_version": 2,
+  "vault_id": null,
+  "proprietario_ref": null,
+  "nome": null,
+  "finalidade": null,
+  "destino": null,
+  "repositorio": null,
+  "perfil_id": null,
+  "autonomia_ref": "08-Sistema/Politicas/autonomia.json",
+  "timezone": null,
+  "idioma_interacao": null,
+  "onboarding_status": "novo",
+  "estrutura": {},
+  "modo_operacao": "sob_demanda",
+  "classe_escrita": "nao_verificada",
+  "global_pause": true,
+  "max_prioridades_dia": 3,
+  "max_projetos_ativos": 5,
+  "limites_confirmados": false,
+  "autoexpandir": "propor",
+  "novos_servicos_pagos": false,
+  "copia_local": {
+    "habilitada": false,
+    "mecanismo_ref": null
+  },
+  "recuperacao": {
+    "procedimento_ref": "08-Sistema/Continuidade/recuperacao.md",
+    "ultima_verificacao": null
+  }
+}

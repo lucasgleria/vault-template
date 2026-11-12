@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "policy_version": "1.1.0",
+  "status": "vigente",
+  "owner_identity_ref": null,
+  "effective_from": null,
+  "authorization_ref": null,
+  "default": "deny_unless_request_or_valid_delegation",
+  "rules": {
+    "start_onboarding": "ask_on_first_interaction_when_unconfigured",
+    "configure_vault": "apply_internal_choices_from_authenticated_answers",
+    "read_vault": "within_authorized_scope",
+    "capture_direct_request": "allow_if_authenticated_request",
+    "create_requested_task": "allow_if_authenticated_request",
+    "classify_reversible": "require_valid_delegation",
+    "create_agent_suggestion": "propose_unless_delegated",
+    "close_task": "require_adequate_evidence_and_authority",
+    "archive_closed": "within_closure_delegation",
+    "activate_project": "require_request_or_delegation",
+    "activate_module_no_new_access": "require_request_or_delegation",
+    "change_due_date": "require_confirmed_source_or_decision",
+    "change_policy": "owner_authority_only",
+    "grant_new_access": "owner_authority_only",
+    "delete_permanently": "specific_procedure_only",
+    "draft_message": "within_request_scope",
+    "send_message": "separate_external_authorization",
+    "change_calendar": "separate_external_authorization",
+    "publish_or_share": "separate_external_authorization",
+    "financial_action": "deny_by_default"
+  },
+  "delegations": [],
+  "limits": {
+    "max_files_per_operation": 50,
+    "max_note_bytes": 262144,
+    "new_paid_services": false,
+    "parallel_preparation_allowed": false,
+    "concurrent_application": "only_with_verified_version_control"
+  },
+  "revocation": {
+    "requested_at": null,
+    "scope": null,
+    "source_ref": null
+  }
+}

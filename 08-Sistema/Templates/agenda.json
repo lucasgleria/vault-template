@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "routine_id": "__ID_DA_ROTINA__",
+  "mode": "scheduled_application",
+  "status": "proposto",
+  "timezone": "__FUSO_IANA_CONFIRMADO__",
+  "recurrence": {
+    "frequency": "weekly",
+    "weekdays": [
+      4
+    ],
+    "local_time": "08:00"
+  },
+  "late_window_minutes": 30,
+  "missed_occurrences": "skip_unless_explicit_recovery",
+  "dst_nonexistent": "skip",
+  "dst_ambiguous": "one_designated_occurrence",
+  "trigger_ref": null,
+  "remote_schedule_id": null,
+  "last_verified_at": null,
+  "authorization_ref": null,
+  "delivery_channel_ref": null,
+  "executor_capability_ref": null
+}

@@ -1,0 +1,1 @@
+# Auxiliares opcionais: Python 3.11+ e biblioteca padrao; nenhuma dependencia pip.

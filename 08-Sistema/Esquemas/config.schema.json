@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vault adaptativo — configuração e entrada inicial",
+  "type": "object",
+  "properties": {
+    "document_version": {},
+    "schema_version": {
+      "const": 2,
+      "type": "integer"
+    },
+    "vault_id": {
+      "type": ["string", "null"],
+      "pattern": "^v_[0-9a-f]{32}$"
+    },
+    "proprietario_ref": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "nome": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "finalidade": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "destino": {
+      "type": ["object", "null"],
+      "required": ["tipo", "referencia"],
+      "properties": {
+        "tipo": {"enum": ["git", "pasta", "servico"]},
+        "referencia": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "estrutura": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z][a-z0-9_-]*$": {
+          "type": "string",
+          "pattern": "^(00-Inbox|01-Diario|02-Tarefas|03-Projetos|04-Areas|05-Conhecimento|06-Rotinas|07-Recursos)(/.*)?$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "repositorio": {
+      "type": ["object", "null"],
+      "required": [
+        "nome_com_proprietario",
+        "branch_canonica",
+        "privado_confirmado"
+      ],
+      "properties": {
+        "nome_com_proprietario": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id_remoto": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "branch_canonica": {
+          "type": "string",
+          "minLength": 1
+        },
+        "privado_confirmado": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "perfil_id": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "pattern": "^n_[0-9a-f]{32}$"
+    },
+    "autonomia_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timezone": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "idioma_interacao": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "onboarding_status": {
+      "enum": ["novo", "em_configuracao", "configurado", "em_descoberta"]
+    },
+    "modo_operacao": {
+      "enum": [
+        "sob_demanda",
+        "agendado_app",
+        "automacao_nuvem"
+      ]
+    },
+    "classe_escrita": {
+      "enum": [
+        "nao_verificada",
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "global_pause": {
+      "type": "boolean"
+    },
+    "max_prioridades_dia": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "max_projetos_ativos": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "limites_confirmados": {
+      "type": "boolean"
+    },
+    "autoexpandir": {},
+    "novos_servicos_pagos": {
+      "type": "boolean"
+    },
+    "copia_local": {},
+    "recuperacao": {}
+  },
+  "required": [
+    "document_version",
+    "schema_version",
+    "vault_id",
+    "proprietario_ref",
+    "repositorio",
+    "perfil_id",
+    "autonomia_ref",
+    "timezone",
+    "idioma_interacao",
+    "onboarding_status",
+    "modo_operacao",
+    "classe_escrita",
+    "global_pause",
+    "max_prioridades_dia",
+    "max_projetos_ativos",
+    "limites_confirmados",
+    "autoexpandir",
+    "novos_servicos_pagos",
+    "copia_local",
+    "recuperacao"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {"properties": {"onboarding_status": {"enum": ["novo", "em_configuracao"]}}},
+      "else": {
+        "properties": {
+          "vault_id": {"type": "string"},
+          "proprietario_ref": {"type": "string"},
+          "perfil_id": {"type": "string"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"onboarding_status": {"const": "configurado"}}},
+      "then": {
+        "required": ["nome", "finalidade", "destino", "estrutura"],
+        "properties": {
+          "nome": {"type": "string"},
+          "finalidade": {"type": "string"},
+          "destino": {"type": "object"}
+        }
+      }
+    },
+    {
+      "if": {
+        "required": ["destino"],
+        "properties": {"destino": {"type": "object", "properties": {"tipo": {"const": "git"}}}}
+      },
+      "then": {"properties": {"repositorio": {"type": "object"}}}
+    },
+    {
+      "if": {"properties": {"onboarding_status": {"const": "em_descoberta"}}},
+      "then": {"properties": {"repositorio": {"type": "object"}}}
+    }
+  ]
+}
